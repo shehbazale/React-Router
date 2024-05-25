@@ -1,12 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import QuizScreen from './pages/QuizScreen';
-import APIHandeling from './pages/API HandelingScreen';
+import AppRoute from './config/approutes';
 
 function App() {
 
 
-  return <APIHandeling />;
+  return <AppRoute />;
 }
 
 export default App;
