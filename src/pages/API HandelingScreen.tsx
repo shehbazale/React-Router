@@ -2,6 +2,8 @@ import axios from "axios"
 import { useState } from "react"
 import { Del, Get, Post, Put } from "../config/apimethods"
 import { useNavigate } from "react-router-dom"
+import { Button } from "@mui/material"
+import AcUnitIcon from '@mui/icons-material/AcUnit';
 
 export default function APIHandeling() {
 
@@ -53,13 +55,15 @@ export default function APIHandeling() {
 
 
     return <>
-        <button onClick={callApi}>Call API</button>
-        <button onClick={postData}>Post Data</button>
-        <button onClick={editData}>Edit Data</button>
-        <button onClick={deleteData}>Delete Data</button>
-        <button onClick={() => {
-            navigate('/quizscreen')
-        }}>Go To Quiz Screen</button>
+        <Button sx={{ margin: 2 }} endIcon={<AcUnitIcon />} variant="contained" onClick={callApi}>Call API</Button>
+        <Button sx={{ margin: 2 }} variant="contained" onClick={postData}>Post Data</Button>
+        <Button sx={{ margin: 2 }} variant="contained" onClick={editData}>Edit Data</Button>
+        <Button sx={{ margin: 2 }} variant="contained" onClick={deleteData}>Delete Data</Button>
+        <Button sx={{ margin: 2 }} variant="contained"
+            onClick={() => {
+                navigate('/quizscreen')
+            }}
+        >Go To Quiz Screen</Button>
 
         <table className="table">
             <tbody>
