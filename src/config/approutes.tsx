@@ -1,26 +1,43 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
-import QuizScreen from "../pages/QuizScreen"
-import APIHandeling from "../pages/API HandelingScreen"
-import NotFound from "../pages/notfound"
-import Notes from "../pages/notes"
-import Login from "../pages/login"
-
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "../pages/Home";
+import Band from "../pages/Band";
+import NotFound from "../pages/notfound";
+import Tour from "../pages/Tour";
+import SearchIcon from "@mui/icons-material/Search";
+import "../App.css";
 export default function AppRoute() {
-    return <>
-        <Router>
-            <nav>
-                <Link style={{ padding: 10 }} to="quizscreen">Quiz Screen</Link>
-                <Link style={{ padding: 10 }} to="apiscreen">Api Handeling Screen</Link>
-                <Link style={{ padding: 10 }} to="notes">Notes</Link>
-                <Link style={{ padding: 10 }} to="login">Login</Link>
-            </nav>
-            <Routes>
-                <Route path="quizscreen" element={<QuizScreen />} />
-                <Route path="apiscreen" element={<APIHandeling />} />
-                <Route path="notes" element={<Notes />} />
-                <Route path="login" element={<Login />} />
-                <Route path="*" element={<NotFound />} />
-            </Routes>
-        </Router>
+  return (
+    <>
+      <Router>
+        <nav id="navbar">
+          <div>
+            <Link id="link" to="home">
+              Home
+            </Link>
+            <Link id="link" to="band">
+              Band
+            </Link>
+            <Link id="link" to="tour">
+              Tour
+            </Link>
+            <Link id="link" to="login">
+              Contact
+            </Link>
+            <Link id="link" to="login">
+              More
+            </Link>
+          </div>
+          <div id="search">
+            <SearchIcon />
+          </div>
+        </nav>
+        <Routes>
+          <Route path="home" element={<Home />} />
+          <Route path="band" element={<Band />} />
+          <Route path="tour" element={<Tour />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Router>
     </>
+  );
 }
